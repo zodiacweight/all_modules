@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hello...</title>
+    <style type="text/css" src="style/style.css"></style>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/underscore/underscore-min.js"></script>
+    <script src="node_modules/backbone/backbone-min.js">--></script>
+    <script data-main="main" src="bower_components/requirejs/require.js"></script> 
+</head>
+<body>
+    <div id="mainContent">
+    <p id="helloText">?</p>
+    <button id="clickButton" class="buttonStyle">click me</button>
+    </div>
+    <script> 
+    var myButton = document.getElementById("clickButton");
+    var myText = document.getElementById("helloText");
+    myButton.addEventListener('click', doSomething, false)
+    function doSomething() {
+    	myText.textContent = "hello, world!";
+    }
+    </script>
+</body>
+</html>
