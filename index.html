@@ -6,20 +6,39 @@
     <meta charset="utf-8">
     <title>Hello...</title>
     <link type="text/css" href="styles/style.css" rel="stylesheet"></link>
-    <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script> 
+    <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
 </head>
+
 <body>
     <div id="mainContent">
-    <p id="helloText">?</p>
-    <button id="clickButton" class="buttonStyle">click me</button>
+        <p id="helloText">?</p>
+        <button id="clickButton" class="buttonStyle">click me</button>
     </div>
-    <script> 
-    var myButton = document.getElementById("clickButton");
-    var myText = document.getElementById("helloText");
-    myButton.addEventListener('click', doSomething, false)
-    function doSomething() {
-    	myText.textContent = "hello, world!";
-    }
+    <script>
+        var myButton = document.getElementById("clickButton");
+        var myText = document.getElementById("helloText");
+        myButton.addEventListener('click', doSomething, false)
+        function doSomething() {
+            myText.textContent = "hello, world!";
+        }
+        window.addEventListener('load', function () {
+            var cnt = 0, intv = setInterval(function () {
+                ++cnt;
+                if (window.gDefault && window.gCoworker && window.gFriend) {
+                    clearInterval(intv);
+                    console.log('%cCheck globals', 'background-color: orange', {
+                        mods: typeof mods !== 'undefined' ? mods : 'Not found',
+                        wrk: typeof wrk !== 'undefined' ? wrk : 'Not found',
+                        mess: typeof mess !== 'undefined' ? mess : 'Not found'
+                    });
+                }
+                if (cnt > 50) {
+                    console.warn('No globals, window=>', window);
+                    clearInterval(intv);
+                }
+            }, 100);
+        });
     </script>
 </body>
+
 </html>
