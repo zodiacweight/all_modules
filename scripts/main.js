@@ -10,16 +10,16 @@ requirejs.config({
         myCoworker: 'scripts/modules/myCoworker'
     },
     shim: {
-        backbone: {
-            deps: ['underscore', 'jquery'],
+        /*backbone: {
+            //deps: ['underscore', 'jquery'],
             exports: 'Backbone'
-        },
-        underscore: {
+        },*/
+        /*underscore: {
             exports: '_'
-        },
-        jquery: {
+        },*/
+        /*jquery: {
             exports: '$'
-        },
+        },*/
         mods: {
             deps: ['myFriend', 'myCoworker'],
             exports: 'mods'
