@@ -27,19 +27,26 @@ requirejs.config({
     }
 });
 require([
-            'backbone', 
-            'mods'
-        ], function(Backbone, mods) {
-    
+    'backbone',
+    'mods'
+], function (Backbone, mods) {
+
     // 
-    console.log('%cModules here','background-color:pink',{
-        '0 Backbone':Backbone, 
-        '1 $':$, 
-        '2 _':_, 
-        '3 mods': typeof mods  !== 'undefined' ? mods : 'Not found', 
-        '4 wrk': typeof wrk  !== 'undefined' ? wrk : 'Not found',
-        '5 mess': typeof mess  !== 'undefined' ? mess : 'Not found'
+    console.log('%cModules here', 'background-color:pink', {
+        '0 Backbone': Backbone,
+        '1 $': $,
+        '2 _': _,
+        '3 mods': typeof mods !== 'undefined' ? mods : 'Not found',
+        '4 wrk': typeof wrk !== 'undefined' ? wrk : 'Not found',
+        '5 mess': typeof mess !== 'undefined' ? mess : 'Not found'
     });
+
+    var myView = Backbone.View.extend({
+            initialize: function () {
+                console.log('Initialized, this=>', this);
+            }
+        }),
+        view1 = new myView();
     // myFriend и myCoworker - то, что возвращают модули
     //console.log("myFriend.talkMyFriend:", myFriend.talkMyFriend);
     //console.log("Вывод из myFriend: ", myFriend.talkMyFriend());
