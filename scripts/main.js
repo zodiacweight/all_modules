@@ -3,17 +3,17 @@ requirejs.config({
     urlArgs: "bust=" + (new Date()).getTime(),
     paths: {
         // jquery: 'node_modules/jquery/dist/jquery.min',
-        backbone: 'test-shim',
+        'test-shim': 'test-shim',
         // underscore: 'node_modules/underscore/underscore-min',
         //mods: 'my_modules/default_empty',
         myFriend: 'modules/myFriend',
         myCoworker: 'modules/myCoworker'
     },
     shim: {
-        backbone: {
+        'test-shim': {
             //deps: ['underscore', 'jquery'],
             deps: ['myFriend', 'myCoworker'],
-            exports: 'Backbone'
+            exports: 'testValue'
         }/*,
         underscore: {
             exports: '_'
@@ -27,7 +27,7 @@ requirejs.config({
         }*/
     }
 });
-require(['backbone'
+require(['test-shim'
          //, 'mods'
          //, 'my_modules/default_empty'
         ], function(Backbone/*, mods*/) {

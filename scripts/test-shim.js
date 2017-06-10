@@ -1,6 +1,5 @@
 (function() {
 
-  window.Backbone = 'Backbone will come. Soon';
-  return;
-
+  window.testValue = 'Backbone will come. Soon';
+  
 })();
