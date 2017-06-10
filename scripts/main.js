@@ -20,10 +20,11 @@ requirejs.config({
         /*jquery: {
             exports: '$'
         },*/
-        mods: {
+        /*mods: {
             deps: ['myFriend', 'myCoworker'],
             exports: 'mods'
-        }
+        }*/
+        mods: ['myFriend', 'myCoworker']
     }
 });
 require([
