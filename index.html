@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <title>Hello...</title>
     <link type="text/css" href="styles/style.css" rel="stylesheet"></link>
-    <!--<script src="node_modules/backbone/backbone.js"></script>-->
     <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
 </head>
 
@@ -15,6 +14,9 @@
         <p id="helloText">?</p>
         <button id="clickButton" class="buttonStyle">click me</button>
     </div>
+    <h4>Why *shim*?</h4>
+    <p>You may consider this approach as an alternative for the *define* one. However, keep in mind that one of circumstances is that we can't avoid a global scope pollution as all variables defined in modules being involved in those procedures expose their data there.</p>
+    <p>See a question dedicated to the order of loading modules here: <a href="https://stackoverflow.com/questions/44471756/requirejs-dependencies-load-order-doesnt-work/44473542">https://stackoverflow.com/questions/44471756/requirejs-dependencies-load-order-doesnt-work/44473542</a></p>
     <script>
         var myButton = document.getElementById("clickButton");
         var myText = document.getElementById("helloText");
